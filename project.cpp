@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <cstdlib>
 #include "httplib.h"
 using namespace std;
 using namespace httplib;
@@ -452,8 +453,11 @@ int main() {
         res.set_content(getAvailableSeatsText(), "text/plain");
     });
 
-    cout << "Server running at http://localhost:8080\n";
-    svr.listen("0.0.0.0", 8080);
+   int port = 10000;
+if (const char* p = getenv("PORT")) port = stoi(p);
+
+cout << "Server running on port " << port << endl;
+svr.listen("0.0.0.0", port);
 
     return 0;
 }
