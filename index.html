@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket Booking System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Ticket Booking System</h1>
+    <p class="sub">Frontend UI + C++ Backend</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Book Ticket</h2>
+        <input type="text" id="name" placeholder="Passenger Name" />
+        <input type="text" id="source" placeholder="Source" />
+        <input type="text" id="destination" placeholder="Destination" />
+        <button onclick="bookTicket()">Book Ticket</button>
+      </div>
+
+      <div class="card">
+        <h2>Cancel Ticket</h2>
+        <input type="number" id="cancelId" placeholder="Ticket ID" />
+        <button onclick="cancelTicket()">Cancel Ticket</button>
+        <button class="secondary" onclick="undoCancel()">Undo Last Cancellation</button>
+      </div>
+
+      <div class="card">
+        <h2>Search Ticket</h2>
+        <input type="number" id="searchId" placeholder="Ticket ID" />
+        <button onclick="searchTicket()">Search</button>
+      </div>
+
+      <div class="card">
+        <h2>Quick Actions</h2>
+        <button onclick="showTickets()">Show Booked Tickets</button>
+        <button onclick="showWaiting()">Show Waiting List</button>
+        <button onclick="showHistory()">Show Cancel History</button>
+        <button onclick="showSeats()">Show Available Seats</button>
+      </div>
+    </div>
+
+    <div class="output-card">
+      <h2>Output</h2>
+      <pre id="output">System ready...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
